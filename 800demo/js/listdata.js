@@ -1,0 +1,3072 @@
+/**
+ * Created by sufei on 2017/3/16.
+ */
+// 列表
+var listdata=[];
+listdata.push({
+        name:['女装','内衣'],
+        genre:[['卫衣', '秋冬连衣裙', '女装外套', '风衣', '毛衣', '大码女装', '牛仔外套', '上衣', '打底裤', '牛仔裤', '中长款衬衫', '优雅美裙', '品牌特惠', '大码', '优品汇'],['丝袜', '睡衣', '家居服', '文胸', '男士内裤', '打底', '女士内裤', '棉袜', '船袜', '浴袍', '性感睡衣', '美体塑身衣']]
+});listdata.push({
+        name:['男装','美食'],
+        genre:[['男士衬衫','短袖T恤','休闲夹克','男士西装','长袖T恤','男士外套','男士针织','运动套装','休闲长裤','男士上装','牛仔裤','时尚背心','潮流男装','品牌特惠','优品汇'],['肉松饼','营养生鲜','茶叶','大红枣','粮油干货','饮料冲调','瓜果干脯' ,'休闲食品','蜂蜜','饼干','核桃','糖果','牛肉干']]
+});listdata.push({
+        name:['母婴儿童'],
+        genre:[['纸尿裤','儿童运动鞋','儿童套装','拉拉裤','湿巾','内衣套装','哺乳文胸','防溢乳垫','内裤','连身衣','春款外套','中国儿童文学','外出套装','休闲裤','牛仔裤','奶瓶','孕妇裤','连衣裙','儿童皮鞋','浴盆','儿童帆布鞋','卫衣','宝宝洗衣液','腰凳','婴儿车','待产包','浴巾']]
+});listdata.push({
+        name:['家纺','居家'],
+        genre:[['布艺软饰','床上用品','蚊帐','四件套','沙发垫','床单','毛巾','床垫','窗帘','床笠','枕头','毛绒玩具','坐垫','抱枕','加厚毯子',],['水杯','汽车用品','热水袋','锅具','洗衣液','百货日杂','文具','家具建材','大家具','厨房烹饪','个护洗护','卫浴','餐具','晾衣架']]
+});listdata.push({
+        name:['鞋品箱包'],
+        genre:[['婴儿礼盒','女鞋','短靴','拖鞋','雪地靴','休闲鞋','男鞋','帆布鞋','男单鞋','女单鞋','厚底鞋','豆豆鞋','运动鞋','链条包','男包','儿童背包','女包','斜挎包','旅行包','钱包','手拿包','贝壳包','双肩包','潮流包包','旅行箱','高跟鞋']]
+});listdata.push({
+        name:['数码家电'],
+        genre:[['手机','U盘','迷你音响','内存卡','钢化膜','数据线','耳机','手机壳','影音相机','数码配件','鼠标','电脑配件','取暖器','风扇','路由器','厨房电器','生活家电','电热水壶','榨汁机','净水器','电饭煲','足浴盆','加湿器','电磁炉','吹风机','剃须刀']]
+});listdata.push({
+        name:['美妆','配饰'],
+        genre:[['护肤套装','护发精油','口红','指甲油','眼线笔','秋冬补水','去角质','唇彩','身体乳','香水','面膜','精油皂','洁面乳','护发','品牌特惠'],['披肩','手套','围巾','帽子','口罩','皮带','毛衣链','胸针','项链','耳饰','手表','戒指','发饰','手镯','手链','鞋垫']]
+});listdata.push({
+        name:['运动','中老年'],
+        genre:[['户外装备','望远镜','健身美体','登山鞋','冲锋衣','登山包','单肩包','户外鞋服','篮球鞋','羽毛球拍','品牌特惠'],['中老年男装','中老年女装','妈妈服','中老年开衫','大码女装','春装新品','按摩器','妈妈鞋','老花镜','足浴桶']]
+});
+//品牌热卖
+var listbestSelling=[];
+listbestSelling.push({
+        aName:['女装','家纺','美妆','母婴','内衣','男装','箱包','居家','全部品牌'],
+        imgSrc:['images/bestselling/bestselling1.jpg','images/bestselling/bestselling2.jpg','images/bestselling/bestselling3.jpg'],
+        linkSrc:['images/linksrc/linksrc1.jpg','images/linksrc/linksrc2.jpg','images/linksrc/linksrc3.jpg','images/linksrc/linksrc4.jpg',
+            'images/linksrc/linksrc5.jpg','images/linksrc/linksrc6.jpg','images/linksrc/linksrc7.jpg','images/linksrc/linksrc8.jpg',
+            'images/linksrc/linksrc9.jpg','images/linksrc/linksrc10.jpg','images/linksrc/linksrc11.jpg','images/linksrc/linksrc12.jpg','images/linksrc/linksrc13.jpg',
+            'images/linksrc/linksrc14.jpg','images/linksrc/linksrc15.jpg','images/linksrc/linksrc16.jpg','images/linksrc/linksrc17.jpg','images/linksrc/linksrc18.jpg',
+            'images/linksrc/linksrc19.jpg','images/linksrc/linksrc20.jpg']
+    });
+// 限量抢购
+var listhrefGoods=[];
+listhrefGoods.push({
+   aName:['10:00 开抢','12:00 开抢','14:00 开抢','16:00 开抢','18:00 开抢','20:00 开抢','22:00 开抢','明日预告'],
+    imgSrc:[ [{
+       Src:'images/hrefgoods/hrefgoods1.jpg',
+        Content:'真的要买我了，不然没了',
+        Price:'￥99'},
+        {Src:'images/hrefgoods/hrefgoods2.jpg',
+            Content:'真的要买我了，不然没了',
+            Price:'￥99'},
+        {Src:'images/hrefgoods/hrefgoods3.jpg',
+            Content:'真的要买我了，不然没了',
+            Price:'￥99'},
+        {Src:'images/hrefgoods/hrefgoods4.jpg',
+            Content:'真的要买我了，不然没了',
+            Price:'￥99'},
+        {Src:'images/hrefgoods/hrefgoods5.jpg',
+            Content:'真的要买我了，不然没了',
+            Price:'￥99'},
+        {Src:'images/hrefgoods/hrefgoods6.jpg',
+            Content:'真的要买我了，不然没了',
+            Price:'￥99'}],
+             [{Src:'images/hrefgoods/hrefgoods7.jpg',
+                 Content:'真的要买我了，不然没了',
+                 Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods8.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods9.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods10.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods11.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods12.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'}],
+             [{Src:'images/hrefgoods/hrefgoods13.jpg',
+                 Content:'真的要买我了，不然没了',
+                 Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods14.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods15.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods16.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods17.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods18.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'}],
+             [{Src:'images/hrefgoods/hrefgoods19.jpg',
+                 Content:'真的要买我了，不然没了',
+                 Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods20.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods21.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods22.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods23.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods24.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'}],
+             [{Src:'images/hrefgoods/hrefgoods25.jpg',
+                 Content:'真的要买我了，不然没了',
+                 Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods26.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods27.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods28.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods29.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'},
+                 {Src:'images/hrefgoods/hrefgoods30.jpg',
+                     Content:'真的要买我了，不然没了',
+                     Price:'￥99'}]]
+});
+// 热销推荐
+var listhotRecommend=[];
+listhotRecommend.push({
+    imgSrc:['images/hotrecommend/hotrecommend1.jpg','images/hotrecommend/hotrecommend2.jpg','images/hotrecommend/hotrecommend3.jpg','images/hotrecommend/hotrecommend4.jpg','images/hotrecommend/hotrecommend5.jpg']
+});
+//今日更新
+var listdayUpdate=[];
+listdayUpdate.push({
+    updateNum:'15177款',
+    lookImg:'images/hc/look_btn.png',
+    hC:[{imgSrc:'images/hc/1.jpg',
+        mJ:"满2件减5元",
+        aDr:'慕百合女士内裤专场'},{imgSrc:'images/hc/2.jpg',
+        mJ:"满35元减5元",
+        aDr:'香莉思文胸专场'},{imgSrc:'images/hc/3.jpg',
+        mJ:"满2件8.8折",
+        aDr:'才子洲中老年服饰专场'},{imgSrc:'images/hc/4.jpg',
+        mJ:"满25元减5元",
+        aDr:'登保喜利袜子专场'}]
+});
+//更新的figure
+var listdayUpdateFigures=[];
+listdayUpdateFigures.push({
+    imgSrc:'images/product/1.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/2.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/3.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/4.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/5.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'剩余4天'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/6.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/7.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/8.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/9.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/10.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/11.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/12.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/13.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/14.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/15.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/16.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/17.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/18.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/19.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/20.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/21.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/22.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/23.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/24.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/25.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/26.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/27.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/28.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/29.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/30.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/31.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/32.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/33.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/34.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/35.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/36.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/37.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/38.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/39.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/40.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/41.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/42.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/43.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/44.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/45.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/46.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/47.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/48.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/49.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/50.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/51.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/52.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/53.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/54.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/55.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/56.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/57.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/58.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/59.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/60.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/61.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/62.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/63.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/64.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/65.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/66.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/67.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/68.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/69.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/70.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/71.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/72.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/73.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/74.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/75.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/76.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/77.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/78.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/79.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/80.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/81.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/82.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/83.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/84.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/85.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/86.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/87.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/88.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/89.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/90.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/91.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/92.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/93.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/94.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/95.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/96.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures.push({
+    imgSrc:'images/product/97.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+// 尾部链接
+var footerlinks=[];
+footerlinks.push({
+    linkDt:'关于我们',
+    linkDd:['关于我们', '诚聘英才', '网站服务条款', '用户服务协议', '联系我们']
+});
+footerlinks.push({
+    linkDt:'购物指南',
+    linkDd:['新手玩转折800', '订单查询', '会员介绍', '积分攻略', '帮助中心']
+});
+footerlinks.push({
+    linkDt:'消费者保障',
+    linkDd:['人工验货', '退货退款政策', '运费补贴卡', '无忧售后', '先行赔付']
+});
+footerlinks.push({
+    linkDt:'商务合作',
+    linkDd:['商家报名', '友情链接', '廉正举报']
+});
+footerlinks.push({
+    linkDt:'下次怎么来?',
+    linkDd:['记住域名：', '百度搜索：', '下载桌面快捷方式','收藏本站：','订阅本站：']
+});
+
+var listdayUpdateFigures1=[];
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/67.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/68.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/69.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/70.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/71.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/72.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/73.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/74.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/75.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/76.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/77.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/78.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/79.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/80.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/81.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/82.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/83.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/84.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/85.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/86.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/87.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/88.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/1.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/2.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/3.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/4.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/5.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'剩余4天'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/6.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/17.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/18.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/19.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/20.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/21.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/22.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/23.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/24.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/7.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/8.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/9.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/10.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/11.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/12.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/13.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/14.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/15.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/16.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/25.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/26.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/27.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/28.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/29.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/30.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/31.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/32.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/33.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/34.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/35.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/36.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/37.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/38.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/39.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/40.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/41.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/42.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/43.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/44.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/45.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/46.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/47.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/48.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/49.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/50.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/51.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/52.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/53.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/54.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/55.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/56.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/57.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/58.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/59.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/60.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/61.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/62.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/63.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/64.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/65.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures1.push({
+    imgSrc:'images/product/66.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+
+
+var listdayUpdateFigures2=[];
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/67.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/68.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/69.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/70.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/71.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/72.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/73.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/74.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/75.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/76.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/77.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/78.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/79.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/80.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/81.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/14.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/15.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/16.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/25.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/26.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/27.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/28.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/29.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/30.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/31.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/32.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/33.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/34.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/35.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/36.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/37.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/38.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/39.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/40.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/41.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/42.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/43.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/44.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/45.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/82.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/83.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/84.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/85.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/86.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/87.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/88.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/1.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/2.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/3.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/49.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/50.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/51.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/52.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/53.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/54.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/55.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/56.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/57.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/58.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/59.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/60.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/61.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/62.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/4.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/5.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'剩余4天'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/6.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/17.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/18.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/19.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/20.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/21.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/22.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/23.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/24.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/7.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/8.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/9.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/10.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/11.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/12.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/13.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/46.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/47.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/48.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/63.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/64.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/65.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures2.push({
+    imgSrc:'images/product/66.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+
+var listdayUpdateFigures3=[];
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/74.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/75.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/76.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/57.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/58.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/59.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/60.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/61.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/73.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/77.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/78.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/79.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/80.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/81.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/14.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/15.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/16.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/25.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/26.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/27.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/28.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/29.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/62.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/4.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/5.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'剩余4天'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/6.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/17.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/24.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/7.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/8.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/9.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/10.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/11.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/12.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/30.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/31.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/32.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/33.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/34.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/35.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/36.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/37.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/38.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/39.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/13.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/46.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/47.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/48.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/63.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/64.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/65.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/66.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/67.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/68.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/69.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/70.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/71.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/72.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/40.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/41.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/42.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/43.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/44.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/45.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/82.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/83.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/84.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/85.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/86.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/87.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/88.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/1.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/2.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'收藏商品'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/3.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/49.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/50.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/51.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/52.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/53.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/54.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/55.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+listdayUpdateFigures3.push({
+    imgSrc:'images/product/56.jpg',
+    oText:'我最便宜的了，买我',
+    oDay:'剩余4天',
+    price:'￥998',
+    oldPrice:'￥1688',
+    newProduct:'新品上架'
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+

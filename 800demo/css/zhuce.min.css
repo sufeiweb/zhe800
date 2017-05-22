@@ -1,0 +1,51 @@
+a,article,aside,button,div,fieldset,figure,footer,form,header,i,img,input,legend,p,section,span{margin:0;padding:0}
+a,i,span{display:block}
+a{text-decoration:none;color:#666}
+a:hover{text-decoration:underline}
+img{display:block;border:none}
+body{background:#f6f6f6;font-size:12px}
+.layout{width:980px;position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;padding-top:40px}
+header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+header p{display:flex}
+header p a{color:#69a5db}
+article{display:flex;background:#fff;width:100%;justify-content:space-around;margin-bottom:20px}
+article aside{padding:80px 0 30px}
+article aside p{display:flex;margin-bottom:30px;align-items:center;position:relative}
+article aside p input{width:240px;height:30px;line-height:30px;padding:0 5px;border:none;border:1px solid #999;border-radius:8px}
+article aside p span:nth-of-type(1){width:80px;text-align:right}
+article aside p:nth-of-type(1) span:nth-of-type(2),article aside p:nth-of-type(2) span:nth-of-type(2),article aside p:nth-of-type(3) span:nth-of-type(2){position:absolute;bottom:-15px;left:85px;display:none}
+article aside p:nth-of-type(1) span:nth-of-type(3),article aside p:nth-of-type(2) span:nth-of-type(3),article aside p:nth-of-type(3) span:nth-of-type(3){width:30px;height:30px;background:url(../images/ico1.png) no-repeat;background-position:0 3px;position:absolute;right:-25px;display:none}
+article aside p:nth-of-type(4) span:nth-of-type(2){position:relative;width:250px;height:30px;line-height:30px;text-align:center;background:#e8e8e8}
+.move{position:absolute;border:1px solid #888;width:30px;height:30px;background:#fff;cursor:move}
+article aside p:nth-of-type(5){position:relative}
+article aside p:nth-of-type(5) input{width:120px}
+article aside p:nth-of-type(5) span:nth-of-type(2){position:absolute;bottom:-15px;left:85px;display:none}
+article aside p:nth-of-type(5) span:nth-of-type(3){border-radius:8px;width:109px;margin-left:10px;height:30px;text-align:center;line-height:30px;background:#ccc}
+article aside p:nth-of-type(6) input{height:15px;width:15px}
+article aside p:nth-of-type(6) span:nth-of-type(2){display:flex;margin-left:5px}
+article aside p:nth-of-type(7){justify-content:center}
+article aside p:nth-of-type(7) a{height:30px;width:180px;font-size:14px;color:#fff;background:#ff3b37;border:none;text-align:center;line-height:30px}
+article aside p:nth-of-type(7) a:hover{opacity:.8;text-decoration:none}
+article section{padding:60px 0 0}
+article section figure{margin-bottom:20px}
+article section form fieldset{border:none;border-top:1px solid #999}
+article section form fieldset legend{text-align:center;margin-bottom:20px}
+article section form fieldset p{overflow:hidden;margin-bottom:20px;margin-left:30px}
+article section form fieldset p a{float:left;text-align:center;line-height:30px;border:1px solid #999;width:110px;height:30px;background:url(../images/ico2.png) no-repeat}
+article section form fieldset p a span{margin-left:5px}
+article section form fieldset p a{margin-left:10px}
+article section form fieldset p a:hover{opacity:.7}
+article section form fieldset p:nth-of-type(1) a:nth-of-type(1){background-position:0 -2px}
+article section form fieldset p:nth-of-type(1) a:nth-of-type(2){background-position:0 -37px}
+article section form fieldset p:nth-of-type(1) a:last-child{border:none;background:url(../images/j.png) no-repeat;text-align:left;padding-left:20px;box-sizing:border-box;background-position:center -10px;text-decoration:none}
+.seen{display:none}
+article section form fieldset p:nth-of-type(2) a:nth-of-type(1){background-position:0 -74px}
+article section form fieldset p:nth-of-type(2) a:nth-of-type(2){background-position:0 -109px}
+article section form fieldset p:nth-of-type(2) a:nth-of-type(3){background-position:0 -142px}
+footer p{display:flex;justify-content:center;margin-bottom:10px;color:#999}
+footer p:nth-of-type(1) a{margin:0 5px;color:#333}
+footer p:nth-of-type(1) a:hover{color:red}
+footer p:nth-of-type(3) a{width:70px;height:30px;margin-right:15px}
+footer p:nth-of-type(3) a:nth-of-type(1){background:url(../images/web_trust.png) no-repeat center;background-size:100%}
+footer p:nth-of-type(3) a:nth-of-type(2){background:url(../images/cert.png)no-repeat center;background-size:100%}
+footer p:nth-of-type(3) a:nth-of-type(3){background:url(../images/credit.png) no-repeat center;background-size:100%}
